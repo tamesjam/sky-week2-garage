@@ -33,9 +33,17 @@ public class Main {
 
         System.out.println(garage.toString());
 
-
-
-
         System.out.println("The total repair price is: " + garage.totalRepairPrice());
+
+        // Create Plane and Bird objects
+        Plane p1 = new Plane(true, 1500, 8, 4);
+        Plane p2 = new Plane(true, 500, 6, 2);
+        Bird bird1 = new Bird("Budgerigar", "Blue", false);
+        Bird bird2 = new Bird("Eagle", "Brown", true);
+
+        Flyable[] flyables_list = {p1, p2, bird1, bird2};
+        for (Flyable fly: flyables_list) {
+            fly.fly();
+        }
     }
 }
