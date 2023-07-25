@@ -7,18 +7,9 @@ public class Garage {
         this.vehicles = new ArrayList<>(List.of(vehicles)); // Arrays.asList() ?
     }
 
-    public double repairPrice(Vehicle vehicle) {
-        if(vehicle instanceof Car) {
-            return 300.00;
-        }else if(vehicle instanceof Motorbike) {
-            return 200.00;
-        }else if(vehicle instanceof Boat) {
-            Boat b = (Boat) vehicle;
-            return b.getMaxCrewSize() * 20;
-        }
-
-        return 100.00;
-    }
+//    public double repairPrice(Vehicle vehicle) {
+//        vehicle.repairPrice(vehicle);
+//    }
 
     public void emptyGarage() {
         this.vehicles = new ArrayList<>();
@@ -27,7 +18,7 @@ public class Garage {
     public double totalRepairPrice() {
         double totRepairPrice = 0.00;
         for (Vehicle v: this.vehicles) {
-            totRepairPrice += repairPrice(v);
+            totRepairPrice += v.getRepairPrice();
         }
 
         return Math.round(totRepairPrice * 100.0) / 100.0;
@@ -58,7 +49,7 @@ public class Garage {
     }
 
     public boolean removeVehicle(String vehicleType) {
-        for (Vehicle v: this.vehicles) {
+        for (Vehicle v: new ArrayList<>(this.vehicles)) {
             String className = v.getClass().getSimpleName().toLowerCase();
             if(className.equals(vehicleType.toLowerCase())) {
                 vehicles.remove(v);

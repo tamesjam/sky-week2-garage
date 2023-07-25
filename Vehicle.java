@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Vehicle {
+public abstract class Vehicle {
     private boolean isManned;
     private int noOfSeats;
     private int noOfWheels;
@@ -18,6 +18,17 @@ public class Vehicle {
         this.vehicleID = nextID;
         nextID++;
     }
+
+    public abstract double getRepairPrice();
+
+//    public abstract double totalRepairPrice() {
+//        double totRepairPrice = 0.00;
+//        for (Vehicle v: this.vehicles) {
+//            totRepairPrice += repairPrice(v);
+//        }
+//
+//        return Math.round(totRepairPrice * 100.0) / 100.0;
+//    }
 
     public void start() {
         if (!isEngineOn) {

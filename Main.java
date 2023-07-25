@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Garage garage = new Garage();
 
-        Vehicle v1 = new Vehicle(true, 4, 4);
+//        Vehicle v1 = new Vehicle(true, 4, 4);
 
         Car c1 = new Car(true, 5, 4, true, 350, 5);
         Motorbike m1 = new Motorbike(true, 1, 2, false);

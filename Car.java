@@ -11,6 +11,10 @@ public class Car extends Vehicle{
         this.noOfDoors = noOfDoors;
     }
 
+    public double getRepairPrice() {
+        return 150;
+    }
+
     public boolean isAutomatic() {
         return isAutomatic;
     }

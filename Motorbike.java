@@ -6,6 +6,11 @@ public class Motorbike extends Vehicle{
         this.hasSideCar = hasSideCar;
     }
 
+    @Override
+    public double getRepairPrice() {
+        return 75;
+    }
+
     public boolean isHasSideCar() {
         return hasSideCar;
     }

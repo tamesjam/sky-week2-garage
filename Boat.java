@@ -15,6 +15,11 @@ public class Boat extends Vehicle{
         this.minCrewSize = minCrewSize;
     }
 
+    @Override
+    public double getRepairPrice() {
+        return this.maxCrewSize * 20;
+    }
+
     public void sail() {
         if (this.isMoored) {
             System.out.println("Setting sail now!");
